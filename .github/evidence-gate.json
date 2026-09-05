@@ -1,0 +1,6 @@
+{
+  "criteria": {
+    "tests": "the test suite passes",
+    "verify": "the change was verified working"
+  }
+}

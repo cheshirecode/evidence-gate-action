@@ -1,0 +1,23 @@
+name: evidence-gate
+description: >-
+  Block PRs whose claims carry no typed evidence. Deterministic parsing of a
+  structured "### Evidence" section — no LLM, no network. Seed the contract
+  with `python3 gate.py --init`.
+branding:
+  icon: check-square
+  color: green
+inputs:
+  config:
+    description: Path to evidence-gate.json (criteria the PR must cover)
+    default: .github/evidence-gate.json
+runs:
+  using: composite
+  steps:
+    - name: evidence gate
+      shell: bash
+      env:
+        PR_BODY: ${{ github.event.pull_request.body }}
+      run: |
+        BODY_FILE="$(mktemp)"
+        printf '%s' "$PR_BODY" > "$BODY_FILE"
+        python3 "${{ github.action_path }}/gate.py" --body-file "$BODY_FILE" --config "${{ inputs.config }}"
