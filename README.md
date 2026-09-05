@@ -1,5 +1,7 @@
 # evidence-gate-action
 
+[![evidence-gate (self)](https://github.com/cheshirecode/evidence-gate-action/actions/workflows/self-check.yml/badge.svg)](https://github.com/cheshirecode/evidence-gate-action/actions/workflows/self-check.yml)
+
 A GitHub Action that blocks pull requests whose claims carry no evidence.
 
 Agent-written PRs are everywhere, and their descriptions routinely claim
