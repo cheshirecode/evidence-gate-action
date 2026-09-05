@@ -1,4 +1,4 @@
-name: evidence-gate
+name: Review Packet Gate
 description: >-
   Block PRs whose claims carry no typed evidence. Deterministic parsing of a
   structured "### Evidence" section — no LLM, no network. Seed the contract
